@@ -1,0 +1,20 @@
+# Web framework (the Axum equivalent)
+fastapi>=0.115
+uvicorn[standard]>=0.30
+
+# PostgreSQL driver, raw SQL (the `postgres` crate equivalent)
+psycopg[binary]>=3.2
+
+# Data validation / serialization (the serde equivalent)
+pydantic>=2.9
+
+# Loads the .env file (the dotenv crate equivalent)
+python-dotenv>=1.0
+
+# Tests
+pytest>=8.0
+httpx2>=0.1  # HTTP client used by FastAPI's TestClient
+
+# Data exercises
+pandas>=2.2
+duckdb>=1.1
