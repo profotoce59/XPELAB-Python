@@ -1,6 +1,6 @@
 """Control flow: if, loops, match, comprehensions.
 
-Run: python -m src.examples.control_flow
+Run: python -m src.examples.02_control_flow
 """
 
 

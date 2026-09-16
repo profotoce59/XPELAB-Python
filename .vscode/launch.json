@@ -1,0 +1,22 @@
+{
+  // Pour lancer un fichier du lab, VS Code doit connaître la racine du projet :
+  // sans elle, `from src.exercises.download import ...` échoue avec
+  // ModuleNotFoundError: No module named 'src'.
+  //
+  // C'est exactement ce que fait `python -m src.exercises.xxx` lancé depuis la
+  // racine, et c'est pour ça que le README insiste sur la forme `-m`.
+  // Ici on obtient le même effet en ajoutant la racine à PYTHONPATH.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python : fichier courant",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": { "PYTHONPATH": "${workspaceFolder}" },
+      "justMyCode": true
+    },
+  ]
+}

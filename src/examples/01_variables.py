@@ -1,6 +1,6 @@
 """Variables, types and data structures.
 
-Run: python -m src.examples.variables
+Run: python -m src.examples.01_variables
 """
 
 from enum import Enum

@@ -3,7 +3,7 @@
 Rust has lazy iterators (`.iter().map().filter()`), and so does Python -
 but Python gives you a dedicated syntax for building them: `yield`.
 
-Run: python -m src.examples.iterators
+Run: python -m src.examples.10_iterators
 """
 
 from collections.abc import Iterator

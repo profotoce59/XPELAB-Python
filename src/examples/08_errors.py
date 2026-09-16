@@ -5,7 +5,7 @@ Python raises them: an exception interrupts the flow and travels up the call
 stack until something catches it. Nothing forces a caller to catch anything,
 which is the main trade-off between the two languages.
 
-Run: python -m src.examples.errors
+Run: python -m src.examples.08_errors
 """
 
 

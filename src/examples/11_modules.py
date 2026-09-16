@@ -5,7 +5,7 @@ requires `mod` to wire them together. Python has one rule: every .py file
 IS a module, every directory containing __init__.py IS a package. Nothing
 needs declaring, only importing.
 
-Run: python -m src.examples.modules
+Run: python -m src.examples.11_modules
 """
 
 # 1. Import a whole module - the name stays qualified.
@@ -18,7 +18,7 @@ from datetime import datetime
 from collections import OrderedDict as Ordered
 
 # 4. Import from our own package. This path is ABSOLUTE, starting from the
-#    project root: it works because we run `python -m src.examples.modules`
+#    project root: it works because we run `python -m src.examples.11_modules`
 #    from the root, so the root is on sys.path.
 from src.errors import XpelabError
 
@@ -45,7 +45,7 @@ def main() -> None:
     print(f"Private helper: {_helper(5, 3)}")
 
     print(f"\nThis module's name: {__name__}")
-    print("When imported it would be 'src.examples.modules' instead.")
+    print("When imported it would be 'src.examples.11_modules' instead.")
 
     # A few standard library modules worth knowing:
     #   pathlib   - file paths, use it instead of os.path

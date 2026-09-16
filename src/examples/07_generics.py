@@ -7,7 +7,7 @@ Python has generics too, but they are a TYPE CHECKER feature only. At
 runtime the interpreter erases them entirely: it never checks that T is
 comparable, it just tries `>` and raises a TypeError if that fails.
 
-Run: python -m src.examples.generics
+Run: python -m src.examples.07_generics
 """
 
 from typing import Generic, Protocol, TypeVar

@@ -65,18 +65,17 @@ common way to end up with a broken Python install.
 Each file under `src/examples/` is a standalone, runnable lesson.
 
 ```sh
-python -m src.examples.variables
-python -m src.examples.control_flow
-python -m src.examples.functions
-python -m src.examples.mutability
-python -m src.examples.classes
-python -m src.examples.protocols
-python -m src.examples.generics
-python -m src.examples.errors
-python -m src.examples.closures
-python -m src.examples.iterators
-python -m src.examples.decorators
-python -m src.examples.modules
+python -m src.examples.01_variables
+python -m src.examples.02_control_flow
+python -m src.examples.03_functions
+python -m src.examples.04_mutability
+python -m src.examples.05_classes
+python -m src.examples.06_protocols
+python -m src.examples.07_generics
+python -m src.examples.08_errors
+python -m src.examples.09_closures
+python -m src.examples.10_iterators
+python -m src.examples.11_modules
 ```
 
 > Use `python -m src.examples.x`, not `python src/examples/x.py`. The `-m` form
@@ -85,7 +84,7 @@ python -m src.examples.modules
 
 ## Variables
 
-> `python -m src.examples.variables`
+> `python -m src.examples.01_variables`
 
 ### Let's declare
 
@@ -260,7 +259,7 @@ lowest, highest = min_max([3, 1, 4])
 
 ## Control Flow
 
-> `python -m src.examples.control_flow`
+> `python -m src.examples.02_control_flow`
 
 Blocks are defined by **indentation** (4 spaces), not braces. The colon opens the
 block.
@@ -357,7 +356,7 @@ shorter and faster than a long `match`.
 
 ## References & Mutability
 
-> `python -m src.examples.mutability`
+> `python -m src.examples.04_mutability`
 
 This is the chapter that explains most surprising Python behaviour.
 
@@ -452,7 +451,7 @@ Readable up to one loop and one condition.
 
 ## Functions
 
-> `python -m src.examples.functions`
+> `python -m src.examples.03_functions`
 
 ### Declaration
 
@@ -524,7 +523,7 @@ bug `mypy` exists to catch before you ship.
 
 ## Error Handling
 
-> `python -m src.examples.errors`
+> `python -m src.examples.08_errors`
 
 Errors in Python are **raised**, not returned. A raised exception interrupts the
 flow and travels up the call stack until something catches it. If nothing does,
@@ -611,7 +610,7 @@ anything that must be released: files, sockets, database connections, locks.
 
 ## Closures
 
-> `python -m src.examples.closures`
+> `python -m src.examples.09_closures`
 
 A function is an ordinary object: store it in a variable, pass it as an
 argument, return it from another function.
@@ -669,7 +668,7 @@ variable's final value. The fix is a default argument:
 
 ## Classes
 
-> `python -m src.examples.classes`
+> `python -m src.examples.05_classes`
 
 A class groups data and the behaviour that goes with it.
 
@@ -772,7 +771,7 @@ class Documentary(Movie):
 
 ## Generics
 
-> `python -m src.examples.generics`
+> `python -m src.examples.07_generics`
 
 Generics let one function or class work with several types while keeping the
 relationship between its inputs and its output.
@@ -840,7 +839,7 @@ result: int | None = highest_value(numbers)
 
 ## Iterators & Generators
 
-> `python -m src.examples.iterators`
+> `python -m src.examples.10_iterators`
 
 This is one of the things Python does best.
 
@@ -885,7 +884,7 @@ with `list(...)`.
 
 ## Modules & Packages
 
-> `python -m src.examples.modules`
+> `python -m src.examples.11_modules`
 
 The rules are short:
 
@@ -1248,6 +1247,9 @@ movies.head(3)        # look at it - never print a whole DataFrame
 movies.dtypes         # what types pandas guessed
 movies.isna().sum()   # where the holes are
 ```
+
+Cheat Sheet : 
+https://datascientyst.com/pandas-vs-sql-cheat-sheet/
 
 `dtypes` is the one to check first. `object` means "a Python object", in
 practice `str` - and a numeric column showing up as `object` tells you the

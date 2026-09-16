@@ -11,7 +11,7 @@ Python has two ways of doing this:
    without inheriting from anything - which is much closer to how a Rust
    trait can be implemented for a type you do not own.
 
-Run: python -m src.examples.protocols
+Run: python -m src.examples.06_protocols
 """
 
 from abc import ABC, abstractmethod

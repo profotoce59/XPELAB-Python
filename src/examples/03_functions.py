@@ -1,6 +1,6 @@
 """Functions: parameters, return values, None, scopes.
 
-Run: python -m src.examples.functions
+Run: python -m src.examples.03_functions
 """
 
 

@@ -11,10 +11,27 @@ Run: pytest
 
 import pytest
 
+import importlib
+
 from src.errors import XpelabError
-from src.examples.functions import add, divide
-from src.examples.generics import highest_value
 from src.models import Movie
+
+# Les fichiers d'exemples sont préfixés par un numéro (01_, 02_, ...) pour
+# suivre l'ordre du README. Conséquence : on ne peut PAS écrire
+#     from src.examples.03_functions import add
+# parce qu'un nom de module ne peut pas commencer par un chiffre. C'est une
+# erreur de SYNTAXE, détectée avant même de chercher le fichier.
+#
+# `python -m src.examples.03_functions` continue de fonctionner : cette forme
+# passe par runpy, qui reçoit le nom du module sous forme de chaîne.
+# Pour importer depuis du code, il faut faire pareil - importlib prend
+# lui aussi une chaîne.
+_functions = importlib.import_module("src.examples.03_functions")
+_generics = importlib.import_module("src.examples.07_generics")
+
+add = _functions.add
+divide = _functions.divide
+highest_value = _generics.highest_value
 
 
 def test_add() -> None:

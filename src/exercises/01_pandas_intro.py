@@ -43,13 +43,23 @@ def main() -> None:
     print(movies["genre"].value_counts().head(5).to_string())
     print()
 
-    print("=== Cleaning: a date with a country glued to it ===")
-    print(f"  raw value : {movies['released'].dropna().iloc[0]!r}")
-    
-    print(f"  example   : {movies['release_date'].dropna().iloc[0].date()} "
-          f"in {movies['release_country'].dropna().iloc[0]}")
-    print("  errors='coerce' turns anything unparseable into NaT instead of")
-    print("  raising and losing the whole column.\n")
+    print("=== Nettoyage : une date avec un pays collé dedans ===")
+    valeur = movies["released"].dropna().iloc[0]
+    print(f"  valeur brute : {valeur!r}")
+    print(f"  type         : {type(valeur).__name__}   -> du texte, pas une date")
+    print()
+    print("  À toi : extrais de `released` deux nouvelles colonnes")
+    print("    - release_date    : un vrai datetime")
+    print("    - release_country : le pays, sans les parenthèses")
+    print("  Pistes : .str.extract() avec une regex, puis pd.to_datetime()")
+    print("  Attention : certaines lignes ne suivent pas le format. Utilise")
+    print("  errors='coerce' pour qu'elles deviennent NaT au lieu de tout casser.")
+    print("  Vérifie : movies['release_date'].dtype doit valoir datetime64[ns]")
+    print("  Si tu obtiens QUE des NaT : %B lit le nom du mois dans la langue")
+    print("  de ta locale. Essaie format='mixed' et lis le corrigé.")
+    print()
+
+    # ... ton code ici ...
 
     print("=== Selecting rows: a boolean mask ===")
     # The mask is a Series of True/False, one per row.
@@ -107,20 +117,17 @@ def main() -> None:
     print(top_genre.to_string(index=False))
     print()
 
-    print("=== À toi de jouer ===")
-    print("  1. Quel pays produit les films les mieux notés ?")
-    print("     (garde uniquement les pays ayant au moins 20 films)")
+    ##=== À toi de jouer ===
+    ##  1. Quel pays produit les films les mieux notés ?
+    ## garde uniquement les pays ayant au moins 20 films
+    
+    
+    ## 2. Obtenir La durée moyenne des films des années 80 et des années 2010?
     
     
     
-    print("  2. La durée moyenne des films a-t-elle changé depuis 1980 ?")
-    print("     (regarde aussi le nombre de films par décennie avant de conclure)")
-    
-    
-    
-    print("  3. Quel studio (colonne `company`) revient le plus souvent ?")
-    print()
-    print("  Corrigé : python -m src.correctif.01_pandas_intro")
+    ##3. Quel studio (colonne `company`) revient le plus souvent ?
+    ## Corrigé : python -m src.correctif.01_pandas_intro
 
 
 if __name__ == "__main__":

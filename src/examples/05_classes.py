@@ -3,7 +3,7 @@
 Rust separates the data (`struct`) from the behaviour (`impl`).
 Python puts both inside a single `class` block.
 
-Run: python -m src.examples.classes
+Run: python -m src.examples.05_classes
 """
 
 from dataclasses import dataclass, field

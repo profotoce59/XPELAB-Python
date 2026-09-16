@@ -3,7 +3,7 @@
 In Python a function is an ordinary object: you can put it in a variable,
 pass it as an argument, return it from another function.
 
-Run: python -m src.examples.closures
+Run: python -m src.examples.09_closures
 """
 
 from collections.abc import Callable

@@ -11,7 +11,7 @@ memory is reclaimed by the garbage collector once nobody points at it
 anymore. Nothing is checked at compile time - which is why the bugs Rust
 prevents at compile time are bugs you hit at runtime in Python.
 
-Run: python -m src.examples.mutability
+Run: python -m src.examples.04_mutability
 """
 
 import copy
